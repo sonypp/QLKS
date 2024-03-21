@@ -1,0 +1,20 @@
+package GUI.Phong;
+
+import javax.swing.JPanel;
+import java.awt.Color;
+
+public class ThemPhongPanel extends JPanel {
+
+	private static final long serialVersionUID = 1L;
+
+	/**
+	 * Create the panel.
+	 */
+	public ThemPhongPanel() {
+		setBackground(new Color(255, 128, 0));
+		setBounds(54, 30, 1132, 769);
+		setLayout(new BorderLayout());
+
+	}
+
+}

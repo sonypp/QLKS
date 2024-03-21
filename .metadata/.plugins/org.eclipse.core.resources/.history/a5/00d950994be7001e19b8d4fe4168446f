@@ -1,0 +1,156 @@
+package GUI.Phong;
+
+import javax.swing.JPanel;
+import java.awt.Color;
+
+import javax.swing.BorderFactory;
+import javax.swing.JButton;
+import javax.swing.JTextPane;
+import javax.swing.border.Border;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JLabel;
+import java.awt.Font;
+import javax.swing.JTextField;
+import javax.swing.GroupLayout;
+import javax.swing.GroupLayout.Alignment;
+import javax.swing.LayoutStyle.ComponentPlacement;
+import javax.swing.JComboBox;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
+
+public class QLPHONGPanel extends JPanel {
+
+	private static final long serialVersionUID = 1L;
+	private JTextField textFieldMP;
+	private JTextField textFieldTT;
+	private JTextField textFieldTenPhong;
+	private JTable table;
+
+	/**
+	 * Create the panel.
+	 */
+	public QLPHONGPanel() {
+		setBackground(new Color(223, 223, 223));
+		setBounds(0, 0, 1251, 835);
+		setLayout(null);
+		
+		JButton btnQLPhong = new JButton("Quản lý phòng");
+		btnQLPhong.setBounds(10, 10, 146, 33);
+		add(btnQLPhong);
+		
+		JButton btnQLTienich = new JButton("Quản lý tiện ích");
+		btnQLTienich.setBounds(153, 10, 146, 33);
+		add(btnQLTienich);
+		
+		JLabel lbQLPhong = new JLabel("Quản lý phòng");
+		lbQLPhong.setForeground(new Color(0, 0, 255));
+		lbQLPhong.setFont(new Font("Tahoma", Font.BOLD, 15));
+		lbQLPhong.setBounds(10, 53, 146, 33);
+		add(lbQLPhong);
+		
+		JLabel lbLuuy = new JLabel("Vui lòng bấm bảng danh sách phòng để chỉnh sửa");
+		lbLuuy.setForeground(new Color(0, 0, 255));
+		lbLuuy.setFont(new Font("Tahoma", Font.ITALIC, 15));
+		lbLuuy.setBounds(10, 96, 498, 33);
+		add(lbLuuy);
+		JPanel panelTimkiem = new JPanel();
+		panelTimkiem.setBounds(10, 132, 1231, 109);
+		panelTimkiem.setForeground(new Color(255, 0, 128));
+		panelTimkiem.setBackground(new Color(255, 255, 255));
+		add(panelTimkiem);
+		
+		JLabel lbMaphong = new JLabel("Mã phòng:");
+		lbMaphong.setBounds(10, 10, 71, 24);
+		
+		textFieldMP = new JTextField();
+		textFieldMP.setBounds(85, 12, 119, 19);
+		textFieldMP.setBackground(new Color(219, 219, 219));
+		textFieldMP.setColumns(10);
+		panelTimkiem.setLayout(null);
+		panelTimkiem.add(lbMaphong);
+		panelTimkiem.add(textFieldMP);
+		
+		JLabel lbTnhTrng = new JLabel("Tình trạng");
+		lbTnhTrng.setBounds(10, 61, 71, 24);
+		panelTimkiem.add(lbTnhTrng);
+		
+		textFieldTT = new JTextField();
+		textFieldTT.setColumns(10);
+		textFieldTT.setBackground(new Color(219, 219, 219));
+		textFieldTT.setBounds(85, 66, 119, 19);
+		panelTimkiem.add(textFieldTT);
+		
+		JLabel lbTenPhong = new JLabel("Tên phòng:");
+		lbTenPhong.setBounds(233, 10, 81, 24);
+		panelTimkiem.add(lbTenPhong);
+		
+		textFieldTenPhong = new JTextField();
+		textFieldTenPhong.setColumns(10);
+		textFieldTenPhong.setBackground(new Color(219, 219, 219));
+		textFieldTenPhong.setBounds(313, 13, 119, 19);
+		panelTimkiem.add(textFieldTenPhong);
+		
+		JLabel lbHinTrng = new JLabel("Hiện trạng:");
+		lbHinTrng.setBounds(233, 61, 71, 24);
+		panelTimkiem.add(lbHinTrng);
+		
+		JComboBox cbbHientrang = new JComboBox();
+		cbbHientrang.setModel(new DefaultComboBoxModel(new String[] {"Mới"}));
+		cbbHientrang.setBounds(314, 65, 118, 21);
+		panelTimkiem.add(cbbHientrang);
+		
+		JLabel lbLoaiphong = new JLabel("Loại phòng:");
+		lbLoaiphong.setBounds(451, 10, 71, 24);
+		panelTimkiem.add(lbLoaiphong);
+		
+		JComboBox cbbLoaiphong = new JComboBox();
+		cbbLoaiphong.setModel(new DefaultComboBoxModel(new String[] {"Vip", "Thường"}));
+		cbbLoaiphong.setBounds(532, 13, 106, 21);
+		panelTimkiem.add(cbbLoaiphong);
+		
+		JLabel lbCtlp = new JLabel("Chi tiết loại phòng:");
+		lbCtlp.setBounds(648, 10, 119, 24);
+		panelTimkiem.add(lbCtlp);
+		
+		JComboBox cbbCtlp = new JComboBox();
+		cbbCtlp.setModel(new DefaultComboBoxModel(new String[] {"Phòng gia đình", "Phòng đơn", "Phòng đôi"}));
+		cbbCtlp.setBounds(769, 12, 128, 21);
+		panelTimkiem.add(cbbCtlp);
+		
+		JLabel lblGiPhng = new JLabel("Giá phòng:");
+		lblGiPhng.setBounds(907, 10, 81, 24);
+		panelTimkiem.add(lblGiPhng);
+		
+		JComboBox cbbGiaPhong = new JComboBox();
+		cbbGiaPhong.setModel(new DefaultComboBoxModel(new String[] {"Trên 1.000.000VNĐ", "Từ 500.000VNĐ đến 1.000.000VNĐ", "Dưới 500.000VNĐ"}));
+		cbbGiaPhong.setBounds(978, 12, 203, 21);
+		panelTimkiem.add(cbbGiaPhong);
+		
+		JPanel panel = new JPanel();
+		panel.setBounds(10, 264, 1231, 561);
+		add(panel);
+		panel.setLayout(null);
+		
+		table = new JTable();
+		table.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		table.setModel(new DefaultTableModel(
+			new Object[][] {
+				{"STT", "M\u00E3 Ph\u00F2ng", "T\u00EAn Ph\u00F2ng", "Lo\u1EA1i Ph\u00F2ng", "Gi\u00E1 Ph\u00F2ng", "Chi Ti\u1EBFt Lo\u1EA1i Ph\u00F2ng", "T\u00ECnh Tr\u1EA1ng", "Hi\u1EC7n Tr\u1EA1ng"},
+			},
+			new String[] {
+				"New column", "New column", "New column", "New column", "New column", "New column", "New column", "New column"
+			}
+		) {
+			boolean[] columnEditables = new boolean[] {
+				false, false, false, true, true, true, true, true
+			};
+			public boolean isCellEditable(int row, int column) {
+				return columnEditables[column];
+			}
+		});
+		table.getColumnModel().getColumn(0).setMinWidth(1);
+		table.setBounds(10, 10, 1200, 541);
+		panel.add(table);
+	}
+}

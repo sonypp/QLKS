@@ -1,0 +1,47 @@
+package GUI.Home;
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class HomeForm extends JFrame {
+    private JPanel mainPanel;
+    private JButton showPanelButton;
+    private JPanel panelToShow;
+
+    public HomeForm() {
+        setTitle("Button Click Example");
+        setSize(400, 300);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        mainPanel = new JPanel();
+        showPanelButton = new JButton("Show Panel");
+        panelToShow = new JPanel();
+        panelToShow.setBackground(Color.BLUE);
+        panelToShow.setPreferredSize(new Dimension(200, 200));
+        panelToShow.setVisible(false);
+
+        showPanelButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                panelToShow.setVisible(true);
+            }
+        });
+
+        mainPanel.add(showPanelButton);
+        mainPanel.add(panelToShow);
+        add(mainPanel);
+
+        setVisible(true);
+    }
+
+    public static void main(String[] args) {
+        SwingUtilities.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                new MainFrame();
+            }
+        });
+    }
+}

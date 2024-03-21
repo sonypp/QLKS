@@ -1,0 +1,82 @@
+package GUI.Phong;
+
+import javax.swing.JPanel;
+import java.awt.Color;
+
+import javax.swing.BorderFactory;
+import javax.swing.JButton;
+import javax.swing.JTextPane;
+import javax.swing.border.Border;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JLabel;
+import java.awt.Font;
+import javax.swing.JTextField;
+import javax.swing.GroupLayout;
+import javax.swing.GroupLayout.Alignment;
+import javax.swing.LayoutStyle.ComponentPlacement;
+
+public class QLPHONGPanel extends JPanel {
+
+	private static final long serialVersionUID = 1L;
+	private JTextField textField;
+
+	/**
+	 * Create the panel.
+	 */
+	public QLPHONGPanel() {
+		setBackground(new Color(223, 223, 223));
+		setBounds(0, 0, 1251, 835);
+		setLayout(null);
+		
+		JButton btnQLPhong = new JButton("Quản lý phòng");
+		btnQLPhong.setBounds(10, 10, 146, 33);
+		add(btnQLPhong);
+		
+		JButton btnQLTienich = new JButton("Quản lý tiện ích");
+		btnQLTienich.setBounds(153, 10, 146, 33);
+		add(btnQLTienich);
+		
+		JLabel lbQLPhong = new JLabel("Quản lý phòng");
+		lbQLPhong.setForeground(new Color(0, 0, 255));
+		lbQLPhong.setFont(new Font("Tahoma", Font.BOLD, 15));
+		lbQLPhong.setBounds(10, 53, 146, 33);
+		add(lbQLPhong);
+		
+		JLabel lbLuuy = new JLabel("Vui lòng bấm bảng danh sách phòng để chỉnh sửa");
+		lbLuuy.setForeground(new Color(0, 0, 255));
+		lbLuuy.setFont(new Font("Tahoma", Font.ITALIC, 15));
+		lbLuuy.setBounds(10, 96, 498, 33);
+		add(lbLuuy);
+		JPanel panelTimkiem = new JPanel();
+		panelTimkiem.setBounds(10, 132, 1231, 147);
+		panelTimkiem.setForeground(new Color(255, 0, 128));
+		panelTimkiem.setBackground(new Color(255, 255, 255));
+		add(panelTimkiem);
+		
+		JLabel lbMaphong = new JLabel("Mã phòng:");
+		
+		textField = new JTextField();
+		textField.setBackground(new Color(192, 192, 192));
+		textField.setColumns(10);
+		GroupLayout gl_panelTimkiem = new GroupLayout(panelTimkiem);
+		gl_panelTimkiem.setHorizontalGroup(
+			gl_panelTimkiem.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_panelTimkiem.createSequentialGroup()
+					.addContainerGap()
+					.addComponent(lbMaphong, GroupLayout.PREFERRED_SIZE, 71, GroupLayout.PREFERRED_SIZE)
+					.addPreferredGap(ComponentPlacement.RELATED)
+					.addComponent(textField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap(1050, Short.MAX_VALUE))
+		);
+		gl_panelTimkiem.setVerticalGroup(
+			gl_panelTimkiem.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_panelTimkiem.createSequentialGroup()
+					.addGap(10)
+					.addGroup(gl_panelTimkiem.createParallelGroup(Alignment.BASELINE)
+						.addComponent(lbMaphong, GroupLayout.PREFERRED_SIZE, 23, GroupLayout.PREFERRED_SIZE)
+						.addComponent(textField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+					.addContainerGap(114, Short.MAX_VALUE))
+		);
+		panelTimkiem.setLayout(gl_panelTimkiem);
+	}
+}

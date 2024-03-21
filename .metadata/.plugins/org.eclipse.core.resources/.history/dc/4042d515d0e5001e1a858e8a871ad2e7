@@ -1,0 +1,35 @@
+import javax.swing.*;
+import javax.swing.border.Border;
+import javax.swing.border.EmptyBorder;
+import java.awt.*;
+
+public class RoundedPanelExample extends JFrame {
+    public RoundedPanelExample() {
+        setTitle("Rounded Panel Example");
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setSize(400, 300);
+
+        JPanel roundedPanel = new JPanel();
+        roundedPanel.setLayout(new BorderLayout());
+        roundedPanel.setBackground(Color.WHITE);
+
+        // Tạo viền tròn
+        int borderThickness = 4; // Độ dày của viền
+        Color borderColor = Color.RED; // Màu của viền
+        Border border = BorderFactory.createCompoundBorder(
+                new EmptyBorder(borderThickness, borderThickness, borderThickness, borderThickness),
+                BorderFactory.createLineBorder(borderColor)
+        );
+        roundedPanel.setBorder(border);
+
+        getContentPane().add(roundedPanel, BorderLayout.CENTER);
+    }
+
+    public static void main(String[] args) {
+        SwingUtilities.invokeLater(new Runnable() {
+            public void run() {
+                new RoundedPanelExample().setVisible(true);
+            }
+        });
+    }
+}

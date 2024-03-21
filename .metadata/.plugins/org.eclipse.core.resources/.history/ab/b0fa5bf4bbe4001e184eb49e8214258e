@@ -1,0 +1,82 @@
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.GroupLayout;
+import javax.swing.GroupLayout.Alignment;
+import javax.swing.JButton;
+import javax.swing.LayoutStyle.ComponentPlacement;
+import java.awt.Color;
+import javax.swing.border.CompoundBorder;
+import javax.swing.border.SoftBevelBorder;
+import javax.swing.border.BevelBorder;
+import javax.swing.UIManager;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+public class HomeForm extends JFrame {
+
+	private static final long serialVersionUID = 1L;
+	private JPanel contentPane;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					HomeForm frame = new HomeForm();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public HomeForm() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		//setBounds(100, 100, 860, 563);
+		setExtendedState(JFrame.MAXIMIZED_BOTH);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JPanel panel = new JPanel();
+		panel.setBackground(new Color(255, 255, 255));
+		panel.setBounds(0, 10, 237, 839);
+		contentPane.add(panel);
+		panel.setLayout(null);
+		
+		JButton btnQLKhachHang = new JButton("Quản lý khách hàng");
+		btnQLKhachHang.setBounds(39, 180, 148, 39);
+		panel.add(btnQLKhachHang);
+		
+		JButton btnManHinhChinh = new JButton("Màn hình chính");
+		btnManHinhChinh.setBounds(39, 32, 148, 39);
+		panel.add(btnManHinhChinh);
+		
+		JButton btnQLPhng = new JButton("Quản lý phòng");
+		btnQLPhng.setBounds(39, 82, 148, 39);
+		panel.add(btnQLPhng);
+		
+		JButton btnQLDichvu = new JButton("Quản lý dịch vụ");
+		btnQLDichvu.setBounds(39, 131, 148, 39);
+		panel.add(btnQLDichvu);
+		
+		JButton btnQLNV = new JButton("Quản lý nhân viên");
+		btnQLNV.setBounds(39, 229, 148, 39);
+		panel.add(btnQLNV);
+		
+		JButton btnQLPhanQuyen = new JButton("Quản lý phân quyền");
+		btnQLPhanQuyen.setBounds(39, 280, 148, 39);
+		panel.add(btnQLPhanQuyen);
+	}
+}

@@ -1,0 +1,18 @@
+package GUI.Phong;
+
+import javax.swing.JPanel;
+
+public class ThemPhongPanel extends JPanel {
+
+	private static final long serialVersionUID = 1L;
+
+	/**
+	 * Create the panel.
+	 */
+	public ThemPhongPanel() {
+		set 
+		setLayout(null);
+
+	}
+
+}

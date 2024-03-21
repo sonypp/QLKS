@@ -1,0 +1,185 @@
+package GUI.Phong;
+
+import javax.swing.JPanel;
+
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Component;
+
+import javax.swing.JLabel;
+import javax.swing.ButtonGroup;
+import javax.swing.GroupLayout;
+import javax.swing.GroupLayout.Alignment;
+import java.awt.Font;
+import javax.swing.SwingConstants;
+import javax.swing.JTextField;
+import javax.swing.JRadioButton;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableCellRenderer;
+import javax.swing.table.DefaultTableModel;
+
+public class ThemPhongPanel extends JPanel {
+
+	private static final long serialVersionUID = 1L;
+	private JTextField tfMaphong;
+	private JTextField textTenphong;
+	private final ButtonGroup buttonGroup = new ButtonGroup();
+	private JTextField textFieldGiaPhong;
+	private JTextField textFieldTinhTrang;
+	private JTextField txtMi;
+	private JTable tableThemTienich;
+
+	/**
+	 * Create the panel.
+	 */
+	public ThemPhongPanel() {
+		setBackground(new Color(211, 211, 211));
+		setBounds(54, 30, 1132, 769);
+		setLayout(null);
+		
+		JPanel pnTop = new JPanel();
+		pnTop.setBackground(new Color(108, 108, 255));
+		pnTop.setBounds(0, 0, 1143, 65);
+		add(pnTop);
+		pnTop.setLayout(null);
+		
+		JLabel lbltextThemPhong = new JLabel("Thêm phòng mới");
+		lbltextThemPhong.setForeground(new Color(255, 255, 255));
+		lbltextThemPhong.setFont(new Font("Tahoma", Font.BOLD, 19));
+		lbltextThemPhong.setBounds(0, 10, 350, 45);
+		pnTop.add(lbltextThemPhong);
+		
+		JPanel pnttphongmoi = new JPanel();
+		pnttphongmoi.setBounds(10, 75, 448, 636);
+		add(pnttphongmoi);
+		pnttphongmoi.setLayout(null);
+		
+		JLabel lbttextTieude = new JLabel("THÔNG TIN PHÒNG MỚI");
+		lbttextTieude.setForeground(new Color(0, 0, 0));
+		lbttextTieude.setFont(new Font("Tahoma", Font.BOLD, 15));
+		lbttextTieude.setHorizontalAlignment(SwingConstants.CENTER);
+		lbttextTieude.setBounds(73, 10, 301, 53);
+		pnttphongmoi.add(lbttextTieude);
+		
+		JLabel lbltextMaphong = new JLabel("Mã phòng:");
+		lbltextMaphong.setBounds(10, 78, 151, 30);
+		pnttphongmoi.add(lbltextMaphong);
+		
+		tfMaphong = new JTextField();
+		tfMaphong.setBounds(10, 118, 428, 30);
+		pnttphongmoi.add(tfMaphong);
+		tfMaphong.setColumns(10);
+		
+		JLabel lbltextTenphong = new JLabel("Tên phòng:");
+		lbltextTenphong.setBounds(10, 170, 151, 30);
+		pnttphongmoi.add(lbltextTenphong);
+		
+		textTenphong = new JTextField();
+		textTenphong.setColumns(10);
+		textTenphong.setBounds(10, 210, 428, 30);
+		pnttphongmoi.add(textTenphong);
+		
+		JLabel lblLoiPhng = new JLabel("Loại phòng:");
+		lblLoiPhng.setBounds(10, 250, 151, 30);
+		pnttphongmoi.add(lblLoiPhng);
+		
+		JRadioButton rdbtnVip = new JRadioButton("Phòng Vip");
+		rdbtnVip.setBounds(6, 286, 155, 21);
+		pnttphongmoi.add(rdbtnVip);
+		
+		JRadioButton rdbtnThuong = new JRadioButton("Phòng Thường");
+		rdbtnThuong.setBounds(176, 286, 151, 21);
+		pnttphongmoi.add(rdbtnThuong);
+		ButtonGroup buttongroup = new ButtonGroup();
+		buttongroup.add(rdbtnVip);
+		buttongroup.add(rdbtnThuong);
+		
+		JLabel lblChiTitLoaiPhong = new JLabel("Chi Tiết Loại phòng:");
+		lblChiTitLoaiPhong.setBounds(10, 313, 151, 30);
+		pnttphongmoi.add(lblChiTitLoaiPhong);
+		
+		JRadioButton rdbtnPDon = new JRadioButton("Phòng đơn");
+		buttonGroup.add(rdbtnPDon);
+		rdbtnPDon.setBounds(6, 349, 87, 21);
+		pnttphongmoi.add(rdbtnPDon);
+		
+		JRadioButton rdbtnPDoi = new JRadioButton("Phòng đôi");
+		buttonGroup.add(rdbtnPDoi);
+		rdbtnPDoi.setBounds(121, 349, 87, 21);
+		pnttphongmoi.add(rdbtnPDoi);
+		
+		JRadioButton rdbtnPGD = new JRadioButton("Phòng gia đình");
+		buttonGroup.add(rdbtnPGD);
+		rdbtnPGD.setBounds(240, 349, 134, 21);
+		pnttphongmoi.add(rdbtnPGD);
+		
+		JLabel lbGiaPhong = new JLabel("Giá phòng:");
+		lbGiaPhong.setBounds(10, 386, 151, 30);
+		pnttphongmoi.add(lbGiaPhong);
+		
+		textFieldGiaPhong = new JTextField();
+		textFieldGiaPhong.setColumns(10);
+		textFieldGiaPhong.setBounds(10, 426, 428, 30);
+		pnttphongmoi.add(textFieldGiaPhong);
+		
+		JLabel lblTinhtrang = new JLabel("Tình trạng:");
+		lblTinhtrang.setBounds(10, 470, 151, 30);
+		pnttphongmoi.add(lblTinhtrang);
+		
+		textFieldTinhTrang = new JTextField();
+		textFieldTinhTrang.setEditable(false);
+		textFieldTinhTrang.setText("Trống");
+		textFieldTinhTrang.setColumns(10);
+		textFieldTinhTrang.setBounds(10, 510, 428, 30);
+		pnttphongmoi.add(textFieldTinhTrang);
+		
+		txtMi = new JTextField();
+		txtMi.setText("Mới");
+		txtMi.setEditable(false);
+		txtMi.setColumns(10);
+		txtMi.setBounds(10, 590, 428, 30);
+		pnttphongmoi.add(txtMi);
+		
+		JLabel lblHinTrng = new JLabel("Hiện trạng:");
+		lblHinTrng.setBounds(10, 550, 151, 30);
+		pnttphongmoi.add(lblHinTrng);
+		
+		JPanel pnThemTienIch = new JPanel();
+		pnThemTienIch.setBounds(489, 76, 633, 318);
+		add(pnThemTienIch);
+		pnThemTienIch.setLayout(null);
+		
+		tableThemTienich = new JTable();
+		tableThemTienich.setSelectionForeground(new Color(0, 0, 0));
+		tableThemTienich.setRowSelectionAllowed(false);
+		tableThemTienich.setModel(new DefaultTableModel(
+			new Object[][] {
+				{"Số thứ tự", "Mã tiện ích", "Tên tiện ích"},
+				{null, null, null},
+				{null, null, null},
+				{null, null, null},
+			},
+			new String[] {
+				"Số thứ tự", "Mã tiện ích", "Tên tiện ích"
+			}
+		));
+		
+		tableThemTienich.setBounds(0, 0, 633, 318);
+		pnThemTienIch.add(tableThemTienich);
+
+	}
+	 static class CustomCellRenderer extends DefaultTableCellRenderer {
+	        @Override
+	        public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
+	            Component rendererComponent = super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
+	            
+	            // Kiểm tra xem có phải dòng 1 và cột 3 không
+	            if (row == 1 && column == 2) {
+	                rendererComponent.setBackground(Color.BLUE); // Thiết lập màu nền là màu xanh
+	            } else {
+	                rendererComponent.setBackground(Color.WHITE); // Thiết lập màu nền mặc định cho các ô khác
+	            }
+
+	            return rendererComponent;
+	        }
+}

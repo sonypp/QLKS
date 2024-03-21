@@ -1,0 +1,79 @@
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.GroupLayout;
+import javax.swing.GroupLayout.Alignment;
+import javax.swing.JButton;
+import javax.swing.LayoutStyle.ComponentPlacement;
+import java.awt.Color;
+import javax.swing.border.CompoundBorder;
+import javax.swing.border.SoftBevelBorder;
+import javax.swing.border.BevelBorder;
+import javax.swing.UIManager;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+public class HomeForm extends JFrame {
+
+	private static final long serialVersionUID = 1L;
+	private JPanel contentPane;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					HomeForm frame = new HomeForm();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public HomeForm() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 860, 563);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JButton btnQLKhachSan = new JButton("Quản lý khách sạn");
+		btnQLKhachSan.setBounds(15, 188, 205, 42);
+		btnQLKhachSan.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		contentPane.add(btnQLKhachSan);
+		
+		JButton btnManHinhChinh = new JButton("Màn hình chính");
+		btnManHinhChinh.setBounds(15, 27, 205, 42);
+		contentPane.add(btnManHinhChinh);
+		
+		JButton btnQLPhng = new JButton("Quản lý phòng");
+		btnQLPhng.setBounds(15, 84, 205, 42);
+		contentPane.add(btnQLPhng);
+		
+		JButton btnQLDichvu = new JButton("Quản lý dịch vụ");
+		btnQLDichvu.setBounds(15, 136, 205, 42);
+		btnQLDichvu.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		contentPane.add(btnQLDichvu);
+		
+		JPanel panel = new JPanel();
+		panel.setBounds(0, 0, 274, 501);
+		contentPane.add(panel);
+	}
+}

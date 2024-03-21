@@ -1,0 +1,54 @@
+package GUI.Phong;
+
+import javax.swing.JPanel;
+
+import java.awt.BorderLayout;
+import java.awt.Color;
+import javax.swing.JLabel;
+import javax.swing.GroupLayout;
+import javax.swing.GroupLayout.Alignment;
+import java.awt.Font;
+import javax.swing.SwingConstants;
+
+public class ThemPhongPanel extends JPanel {
+
+	private static final long serialVersionUID = 1L;
+
+	/**
+	 * Create the panel.
+	 */
+	public ThemPhongPanel() {
+		setBackground(new Color(211, 211, 211));
+		setBounds(54, 30, 1132, 769);
+		setLayout(null);
+		
+		JPanel pnTop = new JPanel();
+		pnTop.setBackground(new Color(108, 108, 255));
+		pnTop.setBounds(0, 0, 1143, 65);
+		add(pnTop);
+		pnTop.setLayout(null);
+		
+		JLabel lbltextThemPhong = new JLabel("Thêm phòng mới");
+		lbltextThemPhong.setForeground(new Color(255, 255, 255));
+		lbltextThemPhong.setFont(new Font("Tahoma", Font.BOLD, 19));
+		lbltextThemPhong.setBounds(0, 10, 350, 45);
+		pnTop.add(lbltextThemPhong);
+		
+		JPanel pnttphongmoi = new JPanel();
+		pnttphongmoi.setBounds(10, 75, 448, 684);
+		add(pnttphongmoi);
+		pnttphongmoi.setLayout(null);
+		
+		JLabel lbttextTieude = new JLabel("THÔNG TIN PHÒNG MỚI");
+		lbttextTieude.setForeground(new Color(0, 0, 0));
+		lbttextTieude.setFont(new Font("Tahoma", Font.BOLD, 15));
+		lbttextTieude.setHorizontalAlignment(SwingConstants.CENTER);
+		lbttextTieude.setBounds(73, 10, 301, 53);
+		pnttphongmoi.add(lbttextTieude);
+		
+		JLabel lblNewLabel = new JLabel("New label");
+		lblNewLabel.setBounds(10, 78, 94, 37);
+		pnttphongmoi.add(lblNewLabel);
+
+	}
+}
